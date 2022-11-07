@@ -6,15 +6,25 @@
   "scripts": {
     "eslintconfigprettiercheck": "eslint-config-prettier index.js",
     "lint": "eslint index.js",
-    "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "build:pre": "rm -rf ./dist",
+    "build:core": "tsc --build",
+    "build": "npm run build:pre && npm run build:core",
+    "clean": "tsc --build --clean",
+    "jasmine": "jasmine",
+    "test": "npm run build && npm run jasmine"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "jasmine": "^4.5.0",
+    "jasmine-spec-reporter": "^7.0.0"
+  },
   "devDependencies": {
+    "@types/jasmine": "^4.3.0",
     "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
     "prettier": "2.7.1",

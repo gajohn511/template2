@@ -5,16 +5,25 @@ module.exports = {
         es2021: true,
         node: true
     },
-    extends: ['eslint:recommended', 'prettier'],
+    root: true,
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier'
+    ],
     overrides: [],
     parserOptions: {
         ecmaVersion: 'latest'
     },
     rules: {
         'no-var': 'error',
-        'no-unused-vars': [
-            'warn',
-            { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
-        ]
+        'no-console': 2 // Remember, this means error!
+        // 'no-unused-vars': [
+        //     'warn',
+        //     { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
+        // ]
     }
 };
