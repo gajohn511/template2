@@ -19,8 +19,8 @@ module.exports = {
         ecmaVersion: 'latest'
     },
     rules: {
-        'no-var': 'error',
-        'no-console': 2 // Remember, this means error!
+        'no-var': 'error'
+        // 'no-console': 2 // Remember, this means error!
         // 'no-unused-vars': [
         //     'warn',
         //     { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
